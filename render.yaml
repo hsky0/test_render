@@ -1,5 +1,5 @@
 databases:
-  - name: testdb_h3tx
+  - name: mysitedb
     plan: free
     databaseName: mysite
     user: mysite
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: testdb_h3tx
+          name: mysitedb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true

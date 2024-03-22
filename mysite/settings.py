@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g+-a_g33khtw@6n&nmvj%6v5jalg-7-_^#c!p*7a940w0!%*zy'
+SECRET_KEY = 'django-insecure-dkqm5z7_4p&5q+5ehbtdp-v@gi0z%w$h&q45oo$s%=%59$m966'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'homepage',
+
+    # 应用程序
+    'homepage.apps.HomepageConfig',
 ]
 
 MIDDLEWARE = [
@@ -82,14 +84,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgres://testdb_h3tx_user:4ltFujfoWEtLT9IhMdmxmCVctZlqU8Wc@dpg-cnukjq0cmk4c73ff675g-a.singapore-postgres.render.com/testdb_h3tx',
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
     )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
