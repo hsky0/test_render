@@ -97,3 +97,10 @@ python3 -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker
 
 
 apturl==0.5.2ubuntu22
+
+dj-database-url==2.1.0
+Django==5.0.3
+gunicorn==21.2.0
+psycopg2-binary==2.9.9
+sqlparse==0.4.4
+asgiref==3.8.0
