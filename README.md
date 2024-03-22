@@ -94,3 +94,6 @@ DATABASES = {
 
 
 python3 -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker
+
+
+apturl==0.5.2ubuntu22
