@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e7&y1xz2h%qtqjj3wx08l8ua5xks@tf0@n13w_&sx=!1kn%_a&'
+SECRET_KEY = 'django-insecure-g+-a_g33khtw@6n&nmvj%6v5jalg-7-_^#c!p*7a940w0!%*zy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'homepage',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://testdb_h3tx_user:4ltFujfoWEtLT9IhMdmxmCVctZlqU8Wc@dpg-cnukjq0cmk4c73ff675g-a.singapore-postgres.render.com/testdb_h3tx',
+        conn_max_age=600
+    )
 }
 
 # Password validation
