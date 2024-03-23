@@ -56,7 +56,25 @@ DATABASES = {
 3. 遇到问题：Is the server running on that host and accepting TCP/IP connections?
    
 
-## 添加数据库支持
+### 建立静态文件服务
+- 需要用到whitenoise[brotil]
+- 安装命令：pip install 'whitenoise[brotli]'
+- 打开mysite/setting.py文件，添加如下内容
+  ```python
+    MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    ...
+    ]
+
+    # This production code might break development mode, so we check whether we're in DEBUG mode
+    if not DEBUG:
+        # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+        # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+        # and renames the files with unique names for each version to support long-term caching
+        STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+  ```   
 
 
 ```console
@@ -123,4 +141,5 @@ asgiref==3.8.0
 
 
 
-  postgres://mysite:MGAcuZ47Nj8IChEXhGgr3qINogDFrxnW@dpg-cnuocbtjm4es73a0f1og-a.oregon-postgres.render.com/mysite_710d
+
+
