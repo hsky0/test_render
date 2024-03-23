@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgres://mysite:MGAcuZ47Nj8IChEXhGgr3qINogDFrxnW@dpg-cnuocbtjm4es73a0f1og-a/mysite_710d',
+        default='postgres://mydababase_user:zudulhhtiofPnBBAq5lCCzvt9D8QRyDX@dpg-cnv8fi5jm4es73dq0etg-a.singapore-postgres.render.com/mydababase',
         conn_max_age=600
     )
 }
@@ -145,3 +145,5 @@ if not DEBUG:
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
