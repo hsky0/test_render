@@ -104,3 +104,19 @@ gunicorn==21.2.0
 psycopg2-binary==2.9.9
 sqlparse==0.4.4
 asgiref==3.8.0
+
+
+#### 依赖项问题
+- 如果直接用命令：pip freeze > requirements.txt
+- 这样做会导致很多依赖项的产生，有可能会导致部署失败
+- 解决办法是手动添加依赖项，将部署需要用到的包及其版本号填入requirements.txt文件
+- 如下所示
+  ```txt
+    dj-database-url==2.1.0
+    Django==5.0.3
+    gunicorn==21.2.0
+    psycopg2-binary==2.9.9
+    sqlparse==0.4.4
+    asgiref==3.8.0
+    uvicorn==0.29.0
+  ```
