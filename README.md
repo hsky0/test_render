@@ -120,3 +120,7 @@ asgiref==3.8.0
     asgiref==3.8.0
     uvicorn==0.29.0
   ```
+
+
+
+  postgres://mysite:MGAcuZ47Nj8IChEXhGgr3qINogDFrxnW@dpg-cnuocbtjm4es73a0f1og-a.oregon-postgres.render.com/mysite_710d
